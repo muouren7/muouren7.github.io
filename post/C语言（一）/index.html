@@ -1,0 +1,333 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>c语言程序设计（一） | muouren7のBlog</title>
+
+<link rel="shortcut icon" href="https://muouren7.github.io/favicon.ico?v=1665903129413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://muouren7.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            muouren7のBlog
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1665903129413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    c语言程序设计（一）
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-10-14 ·
+                    </time>
+                    
+                        <a href="https://muouren7.github.io/tag/nmTcLhTtl/" class="post-tags">
+                            # c
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rcjsrnpyj21g40i642g.jpg" alt="image-20220531094944782" loading="lazy"></figure>
+<p>**温馨提示：**所有的笔记（需要使用Typora软件打开）在视频下方简介中直接获取，纯个人录制，不用加什么公众号这些，各位小伙伴直接网盘自取吧。</p>
+<h1 id="计算机思维导论">计算机思维导论</h1>
+<p>计算机自1946年问世以来，几乎改变了整个世界。</p>
+<p>现在我们可以通过电脑来做很多事情，比如我们常常听到的什么人工智能、电子竞技、大数据等等，都和计算机息息相关，包括我们现在的手机、平板等智能设备，也是计算机转变而来的。各位可以看看最顶上的这张图片，如果你在小时候接触过计算机，那么一定对这张图片（照片拍摄于1996年，在美国加利福尼亚州加利福尼亚州的锁诺玛县）印象深刻，这张壁纸作为WindowsXP系统的默认壁纸，曾经展示在千家万户的电脑屏幕上。</p>
+<p>也许你没有接触过计算机，也许你唯一接触计算机就是用来打游戏，也有可能你曾经捣鼓过计算机，在学习C语言之前，先让我们来了解一下计算机的世界。</p>
+<h2 id="计算机的世界">计算机的世界</h2>
+<p>计算机虽然名字听着很高级，不过它也是由一个个简单电路组成的。</p>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rd1x1rtgj21dy0cw74r.jpg" alt="image-20220531100709841" loading="lazy"></figure>
+<p>这是我们在初中就学习过的电路图，不过这种电路太过简单，只能完成一些很基础的的操作，比如点亮小灯泡等。</p>
+<p>很明显想要实现计算机怎么高级的运算机器，肯定是做不到的，这时我们就需要引入更加强大的数字电路了。</p>
+<blockquote>
+<p>用数字信号完成对数字量进行<a href="https://baike.baidu.com/item/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/3118202">算术运算</a>和<a href="https://baike.baidu.com/item/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/7224729">逻辑运算</a>的电路称为数字电路，或数字系统。由于它具有逻辑运算和逻辑处理功能，所以又称数字逻辑电路。现代的数字电路由半导体工艺制成的若干数字集成器件构造而成。逻辑门是数字逻辑电路的<a href="https://baike.baidu.com/item/%E5%9F%BA%E6%9C%AC%E5%8D%95%E5%85%83/5246264">基本单元</a>。</p>
+<p>计算机专业一般会在大一开放《数字电路》这门课程，会对计算机底层的数字电路实现原理进行详细介绍。</p>
+</blockquote>
+<p>数字电路引入了逻辑判断，我们来看看简单的数字电路：</p>
+<figure data-type="image" tabindex="3"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rdj1916aj21iq0dygm4.jpg" alt="image-20220531102337270" loading="lazy"></figure>
+<p>数字电路中，用电压的高低来区分出两种信号，低电压表示0，高电压表示1，由于只能通过这种方式表示出两种类型的信号，所以计算机采用的是二进制。</p>
+<blockquote>
+<p><a href="https://baike.baidu.com/item/%E4%BA%8C%E8%BF%9B%E5%88%B6/361457">二进制</a>是计算技术中广泛采用的一种<a href="https://baike.baidu.com/item/%E6%95%B0%E5%88%B6/217113">数制</a>。二进制数据是用0和1两个数码来表示的数。它的<a href="https://baike.baidu.com/item/%E5%9F%BA%E6%95%B0/4260">基数</a>为2，进位规则是“逢二进一”，借位规则是“借一当二”。</p>
+<p>比如我们一般采用的都是十进制表示，比如9再继续加1的话，就需要进位了，变成10，在二进制中，因为只有0和1，所以当1继续加1时，就需要进位了，就变成10了（注意这不是十，读成一零就行了）</p>
+</blockquote>
+<p>当然，仅仅有两种信号还不够，我们还需要逻辑门来辅助我们完成更多的计算，最基本的逻辑关系是与、或、非，而逻辑门就有相应的是<a href="https://baike.baidu.com/item/%E4%B8%8E%E9%97%A8">与门</a>、<a href="https://baike.baidu.com/item/%E6%88%96%E9%97%A8">或门</a>和<a href="https://baike.baidu.com/item/%E9%9D%9E%E9%97%A8">非门</a>，可以用电阻、电容、二极管、三极管等分立原件构成（具体咋构成的咱这里就不说了）</p>
+<p>比如与操作，因为只有两种类型，我们一般将1表示为真，0表示为假，与操作（用&amp;表示）要求两个数参与进来，比如：</p>
+<ul>
+<li>1 &amp; 1 = 1    必须两边都是真，结果才为真。</li>
+<li>1 &amp; 0 = 0    两边任意一个或者都不是真，结果为假。</li>
+</ul>
+<p>或运算（用 | 表示）：</p>
+<ul>
+<li>1 | 0 = 1    两边只要有一个为真，结果就为真</li>
+<li>0 | 0 = 0    两边同时为假，结果才是假</li>
+</ul>
+<p>非运算实际上就是取反操作（可以是 ! 表示）</p>
+<ul>
+<li>!1 = 0</li>
+<li>!0 = 1     非运算会将真变成假，假变成真</li>
+</ul>
+<p>有了这些运算之后，我们的电路不仅仅可以实现计算，也可以实现各种各样的逻辑判断，最终才能发展成我们的计算机。</p>
+<p>前面我们大概介绍一下计算机的底层操作原理，接着我们来看看计算机的基本组成。</p>
+<figure data-type="image" tabindex="4"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2reca0cgoj20x60b40uu.jpg" alt="image-20220531105143154" loading="lazy"></figure>
+<p>相信各位熟知的计算机都是一个屏幕+一个主机的形式，然后配上我们的键盘鼠标，就可以开始使用了，但是实际上标准的计算机结构并没有这么简单，我们来看看：</p>
+<figure data-type="image" tabindex="5"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2reersjdmj21k20fqdhl.jpg" alt="image-20220531105407595" loading="lazy"></figure>
+<p>我们电脑最核心的部件，当属CPU，因为几乎所有的运算都是依靠CPU进行（各种各样的计算电路已经在CPU中安排好了，我们只需要发送对应的指令就可以进行对应的运算），它就像我们人的大脑一样，有了大脑才能进行思考。不过光有大脑还不行，还要有一些其他的部分来辅助工作，比如我们想向电脑里面打字，那么就需要连接一个键盘才能输入，我们想要点击桌面上的图标，那么就需要一个鼠标来操作光标，这些都是输入设备。我们的电脑开机之后显示器上会显示出画面，实际上显示器就是输出设备。</p>
+<p>当然除了这些内容之外，我们的电脑还需要内存来保存运行时的一些数据，以及外存来保存文件（比如硬盘）等。我们常说的iPhone13 512G，这个512G并不是指的内存，而是指的外存，准确的说是用于存放文件硬盘大小，而真正的内存是我们常说的4G/6G/8G运行内存，内存的速度远高于外存的速度，所以1G内存的价格远超1G硬盘的价格。</p>
+<figure data-type="image" tabindex="6"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2riw9u06uj21bs0b4jso.jpg" alt="image-20220531132920027" loading="lazy"></figure>
+<p>计算机包括五大部件：运算器、控制器、存储器、输入和输出设备。有了这一套完整的硬件环境，我们的电脑才算是有了一个完整的身体。</p>
+<p>**问题：**我们上面提到的这些硬件设备哪些是属于外设？</p>
+<h2 id="操作系统概述">操作系统概述</h2>
+<p>前面我们了解了一下计算机的大致原理和组成结构，但是光有这一套硬件可不行，如何让这一套硬件按照我们想要的方式运作起来，也是非常重要的，这时我们就需要介绍操作系统了。</p>
+<blockquote>
+<p>操作系统（operating system，简称OS）是管理<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6/5459592">计算机硬件</a>与<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6/12053">软件</a>资源的<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F/3220205">计算机程序</a>。操作系统需要处理如管理与<a href="https://baike.baidu.com/item/%E9%85%8D%E7%BD%AE/2394679">配置</a><a href="https://baike.baidu.com/item/%E5%86%85%E5%AD%98/103614">内存</a>、决定<a href="https://baike.baidu.com/item/%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90/974435">系统资源</a>供需的优先次序、控制<a href="https://baike.baidu.com/item/%E8%BE%93%E5%85%A5%E8%AE%BE%E5%A4%87/10823368">输入设备</a>与<a href="https://baike.baidu.com/item/%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/10823333">输出设备</a>、操作网络与管理<a href="https://baike.baidu.com/item/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/4827215">文件系统</a>等基本事务。操作系统也提供一个让用户与系统<a href="https://baike.baidu.com/item/%E4%BA%A4%E4%BA%92/6964417">交互</a>操作的界面。</p>
+<p>一般在计算机专业大二，会开放《操作系统》课程，会详细讲解操作系统的底层运作机制和调度。</p>
+</blockquote>
+<p>一般我们电脑上都安装了Windows操作系统（苹果笔记本安装的是MacOS操作系统），现在主流的电脑都已经预装Windows11了：</p>
+<figure data-type="image" tabindex="7"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rjnis7lkj21ew0e041a.jpg" alt="image-20220531135531352" loading="lazy"></figure>
+<p>有了操作系统，我们的电脑才能真正运行起来，我们就可以轻松地通过键盘和鼠标来操作电脑了。</p>
+<p>不过操作系统最开始并不是图形化界面，它类似于Windows中的命令提示符：</p>
+<figure data-type="image" tabindex="8"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rkezow9dj21v60ew40f.jpg" alt="image-20220531142155616" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rkjitqqnj21kc08475e.jpg" alt="image-20220531142617124" loading="lazy"></figure>
+<p>没有什么图标这些概念，只有一个简简单单的黑框让我们进行操作，通过输入命令来进行一些简单的使用，程序的运行结果也会在黑框框（命令行）中打印出来，不过虽然仅仅是一个黑框，但是能运行的程序可是非常非常多的，只需要运行我们编写好的程序，就能完成各种各样复杂的计算任务，并且计算机的计算速度远超我们的人脑。</p>
+<blockquote>
+<p>中国超级计算机系统天河二号，计算速度达到每秒5.49亿亿次。</p>
+</blockquote>
+<p>当然，除了我们常见的Windows和MacOS系统之外，还有我们以后需要经常打交道的Linux操作系统，这种操作系统是开源的，意思是所有的人都可以拿到源代码进行修改，于是就出现了很多发行版：</p>
+<figure data-type="image" tabindex="10"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rkm3bo7sj21gk0b4dh3.jpg" alt="image-20220531142844465" loading="lazy"></figure>
+<p>这些发行版有带图形化界面的，也有不带图形化界面的，不带图形化界面的Linux将是我们以后学习的重点。</p>
+<p>不同操作系统之间的软件并不是通用的，比如Windows下我们的软件一般是.exe后缀名称，而MacOS下则不是，并且也无法直接运行.exe文件，这是因为不同操作系统的具体实现会存在一些不同，程序编译（我们之后会介绍到）之后的格式也会不同，所以是无法做到软件通用的。</p>
+<p>正是因为有了操作系统，才能够组织我们计算机的底层硬件（包括CPU、内存、输入输出设备等）进行有序工作，没有操作系统电脑就如同一堆废铁，只有躯壳没有灵魂。</p>
+<h2 id="计算机编程语言">计算机编程语言</h2>
+<p>现在我们大致了解了我们的电脑的运作原理，实际上是一套完整的硬件+一个成形的操作系统共同存在的。接着我们就可以开始了解一下计算机的编程语言了。我们前面介绍的操作系统也是由编程语言写出来的，操作系统本身也算是一个软件。</p>
+<figure data-type="image" tabindex="11"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rl228014j21eq0a2gnf.jpg" alt="image-20220531144405958" loading="lazy"></figure>
+<p>那么操作系统是如何让底层硬件进行工作的呢？实际上就是通过向CPU发送指令来完成的。</p>
+<blockquote>
+<p>计算机指令就是指挥机器工作的指示和命令，程序就是一系列按一定顺序排列的指令，执行程序的过程就是计算机的工作过程。指令集，就是CPU中用来计算和控制计算机系统的一套指令的集合，而每一种新型的CPU在设计时就规定了一系列与其他硬件电路相配合的指令系统。而指令集的先进与否，也关系到CPU的性能发挥，它也是CPU性能体现的一个重要标志。</p>
+</blockquote>
+<p>我们电脑中的CPU有多种多样的，不同的CPU之间可能也会存在不同的架构，比如现在最常用的是x86架构，还有我们手机平板这样的移动设备使用的arm架构，不同的架构指令集也会有不同。</p>
+<p>我们知道，计算机底层硬件都是采用的0和1这样的二进制表示，所以指令也是一样的，比如（这里随便写的）：</p>
+<ul>
+<li>000001  -  代表开机</li>
+<li>000010  -  代表关机</li>
+<li>000011  -  代表进行加法运算</li>
+</ul>
+<p>当我们通过电路发送给CPU这样的二进制指令，CPU就能够根据我们的指令执行对应的任务，而我们编写的程序保存在硬盘中也是这样的二进制形式，我们只需要将这些指令组织好，按照我们的思路一条一条执行对应的命令，就能够让计算机计算任何我们需要的内容了，这其实就是机器语言。</p>
+<p>不过随着时代的进步，指令集越来越大，CPU支持的运算类型也越来越多，这样的纯二进制编写实在是太累了，并且越来越多的命令我们根本记不住，于是就有了汇编语言。汇编语言将这些二进制的操作码通过助记符来替换：</p>
+<ul>
+<li>MOV   传送字或字节。</li>
+<li>MOVSX  先符号扩展,再传送。</li>
+<li>MOVZX  先零扩展,再传送。</li>
+<li>PUSH  把字压入堆栈。</li>
+</ul>
+<p>把这些原有的二进制命令通过一个单词来代替，这样是不是就好记多了，在程序编写完成后，我们只需要最后将这些单词转换回二进制指令就可以了，这也是早期出现的低级编程语言。</p>
+<figure data-type="image" tabindex="12"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rlmjqp3dj217e09agmz.jpg" alt="image-20220531150346899" loading="lazy"></figure>
+<p>不过虽然通过这些助记符就能够很轻松地记住命令，但是还是不够方便，因为可能我们的程序需要完成一个很庞大的任务，但是如果还是这样一条一条指令进行编写，是不是太慢了点，有时候可能做一个简单的计算，都需要好几条指令来完成。于是，高级编程语言——C语言，终于诞生了。</p>
+<blockquote>
+<p>C语言诞生于美国的<a href="https://baike.baidu.com/item/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4/686816">贝尔实验室</a>，由<a href="https://baike.baidu.com/item/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87/7267171">丹尼斯·里奇</a>（Dennis MacAlistair Ritchie）以肯尼斯·蓝·汤普森（Kenneth Lane Thompson）设计的<a href="https://baike.baidu.com/item/B%E8%AF%AD%E8%A8%80/1845842">B语言</a>为基础发展而来，在它的主体设计完成后，汤普森和里奇用它完全重写了UNIX操作系统，且随着UNIX操作系统的发展，C语言也得到了不断的完善。</p>
+</blockquote>
+<p>高级语言不同于低级语言，低级语言的主要操作对象是指令本身，而高级语言却更加符合我们人脑的认知，更像是通过我们人的思维，去告诉计算机你需要做什么，包括语法也会更加的简单易懂。下面是一段简单的C语言代码：</p>
+<pre><code class="language-c">int main() {
+  	int a = 10;   //定义一个a等于10
+  	int b = 10;   //定义一个b等于10
+  	int c = a + b;   //语义非常明确，c就是a加上b计算出来的结果。
+  	return 0;
+}
+</code></pre>
+<p>不过现在看不懂没关系，我们后面慢慢学。</p>
+<p>C语言虽然支持按照我们更容易理解的方式去进行编程，但是最后还是会编译成汇编指令最后变成计算机可以直接执行的指令，不过具体的编译过程，我们不需要再关心了，我们只需要去写就可以了，而对我们代码进行编译的东西，称为编译器。</p>
+<figure data-type="image" tabindex="13"><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2uzn81nwsj21qk07mdhd.jpg" alt="image-20220603123928430" loading="lazy"></figure>
+<p>当然，除了C语言之外，还有很多其他的高级语言，比如Java、Python、C#、PHP等等，相比其他编程语言，C算是比较古老的一种了，但是时隔多年直至今日，其他编程语言也依然无法撼动它的王者地位：</p>
+<figure data-type="image" tabindex="14"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rlw7fvhmj20xo0b0wf4.jpg" alt="image-20220531151304124" loading="lazy"></figure>
+<p>可以看到在2021年9月，依然排在编程语言排行榜的<strong>第一名</strong>（Python和Java紧随其后），可见这门语言是多么的不可撼动，很多操作系统、高级编程语言底层实现，几乎都是依靠C语言去编写的（包括Java的底层也是C/C++实现的）所以学习这一门语言，对于理工科尤其是计算机专业极为重要，学好C语言你甚至可以融汇贯通到其他语言，学起来也会轻松很多。</p>
+<p>那么从下节课开始，我们就先做好一些环境上的准备。</p>
+<h2 id="c语言开发环境部署">C语言开发环境部署</h2>
+<p>完成开发环境部署之后，我们就可以使用C语言来将一句话输出到控制台了，成功编译运行下面的简单程序：</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    printf(&quot;Hello, World!\n&quot;);
+    return 0;
+}
+</code></pre>
+<p>首先，我们既然要将我们编写的C语言代码进行编译，那么肯定得找到一个合适的编译器才行，现代的集成开发环境IDE一般都包含了这些编译器，所以我们不需要进行单独的安装。</p>
+<p>我们只需要找一个集成开发环境去安装就行了，目前功能比较完善的集成开发环境有：</p>
+<ul>
+<li>Codeblocks（支持Windows、Linux、MacOS操作系统）</li>
+<li>Visual Studio（支持Windows、MacOS操作系统）</li>
+<li>CLion（支持Windows、Linux、MacOS操作系统）</li>
+</ul>
+<p>这里我们就使用CLion作为我们的开发工具使用（这个IDE是收费的，但是学生可以申请免费使用，别担心，大学四年肯定是够你用了，选这个是考虑到后面同学们可能会继续学习Java，Java语言的推荐IDE也是同一个公司的产品，界面都长得差不多）当然如果你想要使用其他的开发工具，也可以，但是这里我们就不演示了。</p>
+<p>首先前往官网下载：<a href="https://www.jetbrains.com/clion/">CLion: A Cross-Platform IDE for C and C++ by JetBrains</a></p>
+<figure data-type="image" tabindex="15"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rn0oo80lj22h00eudia.jpg" alt="image-20220531155158399" loading="lazy"></figure>
+<p>下载完成后我们直接点击安装：</p>
+<figure data-type="image" tabindex="16"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rna8jfzdj21wa0lg438.jpg" alt="image-20220531160109168" loading="lazy"></figure>
+<p>如果你不是很熟悉，建议直接点Next安装到C盘默认路径，不要去修改，当然如果确实C盘没有空间，那可以自行修改为其他路径，但是注意最好路径中不要出现中文。</p>
+<figure data-type="image" tabindex="17"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rncm5g59j220k0l4q7u.jpg" alt="image-20220531160325932" loading="lazy"></figure>
+<p>勾选一下创建快捷方式，然后继续点Next等待安装就行了：</p>
+<figure data-type="image" tabindex="18"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnd7qj7mj22080l67b2.jpg" alt="image-20220531160400589" loading="lazy"></figure>
+<p>安装完成后，我们可以直接打开：</p>
+<figure data-type="image" tabindex="19"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnjvf3k1j227w0r079b.jpg" alt="image-20220531161024539" loading="lazy"></figure>
+<p>这里会提示我们激活，点击按钮去官网注册一个账号。注册完成后，推荐去申请一下学生授权，因为试用只有30天：<a href="https://zhuanlan.zhihu.com/p/378185042">Jetbrains学生授权获取指南 - 知乎 (zhihu.com)</a></p>
+<figure data-type="image" tabindex="20"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnltppqfj22c40segr3.jpg" alt="image-20220531161215214" loading="lazy"></figure>
+<p>这里我们点击开始试用，然后就可以点击Continue了，现在成功来到主界面：</p>
+<figure data-type="image" tabindex="21"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnnis1prj22020u00xg.jpg" alt="image-20220531161354913" loading="lazy"></figure>
+<p>由于是英文，使用不太方便，所以我们安装一下中文插件：</p>
+<figure data-type="image" tabindex="22"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnom1mcvj223k0u0k1k.jpg" alt="image-20220531161457379" loading="lazy"></figure>
+<p>现在我们就成功安装好CLion集成开发环境了。</p>
+<figure data-type="image" tabindex="23"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnpj7nshj222r0u0wjs.jpg" alt="image-20220531161549721" loading="lazy"></figure>
+<p>现在我们来创建我们的第一个C语言项目（我们的程序是以一个项目的形式进行管理的，这里知道怎么创建就行了）：</p>
+<figure data-type="image" tabindex="24"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnqck8fyj22450u0tf6.jpg" alt="image-20220531161637209" loading="lazy"></figure>
+<p>这里选择C可执行文件，然后项目的保存位置可以自行修改，配置完成后点击创建：</p>
+<figure data-type="image" tabindex="25"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnveombnj21kx0u00vt.jpg" alt="image-20220531162129788" loading="lazy"></figure>
+<p>可以看到，在创建之后，会自动为我们生成一段示例代码，而之后我们要编写的代码，都在生成的main.c中进行编写，除了这个文件，其他的全部不要去修改，也不用管是什么意思，后面我们会慢慢介绍。</p>
+<p>接着我们需要配置一下工具链，选择捆绑的MinGW（如果已经有了就不需要配置了）</p>
+<figure data-type="image" tabindex="26"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2robghz53j21kq0u0tdo.jpg" alt="image-20220531163655149" loading="lazy"></figure>
+<p>那么这段示例代码有了，我们如何编译运行呢？</p>
+<figure data-type="image" tabindex="27"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rnyucqxmj21kv0u00wb.jpg" alt="image-20220531162447514" loading="lazy"></figure>
+<p>我们可以点击代码旁边的绿色三角形符号或是右上角的绿色三角形，就可以直接编译运行我们的代码了。运行的结果是在控制台输出一个“HelloWorld！”，当然我们也可以直接运行编译出来的可执行文件：</p>
+<figure data-type="image" tabindex="28"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2ro0rgqnaj21u20e4di5.jpg" alt="image-20220531162638883" loading="lazy"></figure>
+<p>我们可以看到，这里生成了一个<code>项目名称.exe</code>文件，这种就是Windows环境下可以直接运行的应用程序，我们可以打开这个文件夹，直接使用cmd来运行：</p>
+<figure data-type="image" tabindex="29"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2ro2lc6rxj218404qt9n.jpg" alt="image-20220531162824734" loading="lazy"></figure>
+<p>运行出来的效果是一样的，这种程序实际上就是最原始的命令行程序，输入和输出都是在这种黑框框中进行的，而我们的主要学习目标也是这种命令行程序。</p>
+<p>这样我们就配置好了开发环境，然后就不要去动其他的东西了，一般新手最容易遇到一些奇奇怪怪的问题。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://muouren7.github.io/post/C语言（三）/" class="post-title gt-a-link">
+                    c语言程序设计（三）
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://muouren7.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>腾讯云vps搭建（使用V2ray进行翻墙） | muouren7のBlog</title>
+
+<link rel="shortcut icon" href="https://muouren7.github.io/favicon.ico?v=1665903129413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://muouren7.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            muouren7のBlog
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1665903129413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    腾讯云vps搭建（使用V2ray进行翻墙）
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-10-14 ·
+                    </time>
+                    
+                        <a href="https://muouren7.github.io/tag/VuZAQftqx/" class="post-tags">
+                            # v2ray
+                        </a>
+                    
+                        <a href="https://muouren7.github.io/tag/ZjHTkUcTln/" class="post-tags">
+                            # vpn
+                        </a>
+                    
+                        <a href="https://muouren7.github.io/tag/OGriTKihcZ/" class="post-tags">
+                            # 翻墙
+                        </a>
+                    
+                        <a href="https://muouren7.github.io/tag/rvFSr8H_RR/" class="post-tags">
+                            # vps
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="1-准备工作">1、准备工作</h2>
+<p>购买一台海外线路的虚拟服务器，轻量级即可、V2ray客户端</p>
+<h2 id="2-开始搭建">2、开始搭建</h2>
+<p>购买好vps后，选择安装Debian系统（以debian为例），使用ssh进入到终端，（腾讯云自带）。注：腾讯云的vps需要在防火墙中设置端口的放行，不然搭建好了也连不上外网。</p>
+<p>进入终端后先执行以下命令安装curl</p>
+<pre><code class="language-shell">apt-get update -y &amp;&amp; apt-get install curl -y
+</code></pre>
+<p>再执行以下命令安装V2ray</p>
+<pre><code class="language-shell">bash &lt;(curl -s -L https://git.io/v2ray.sh)	#V2ray一键安装脚本
+</code></pre>
+<p>安装好后根据提示配置，（基本上都是默认）</p>
+<p>安装好后再输入以下命令获取连接地址，将获取的地址进行复制</p>
+<pre><code class="language-shell">V2ray -url		##记不清了，大概是这个
+</code></pre>
+<p>回到V2ray桌面端，注意:V2ray客户端一定要包含v2ray核心</p>
+<p>把复制的地址加入到V2ray客户端即可。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://muouren7.github.io/post/Vue快速入门/" class="post-title gt-a-link">
+                    Vue快速入门
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://muouren7.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

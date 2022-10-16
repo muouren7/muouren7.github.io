@@ -1,0 +1,903 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Vue快速入门 | muouren7のBlog</title>
+
+<link rel="shortcut icon" href="https://muouren7.github.io/favicon.ico?v=1665903129413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://muouren7.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            muouren7のBlog
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1665903129413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Vue快速入门
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-10-14 ·
+                    </time>
+                    
+                        <a href="https://muouren7.github.io/tag/W4TGEHxPI/" class="post-tags">
+                            # Vue
+                        </a>
+                    
+                        <a href="https://muouren7.github.io/tag/tIUfW5Uual/" class="post-tags">
+                            # 笔记
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="基础">基础</h1>
+<h2 id="1-demo">1、Demo</h2>
+<p><strong>index.html</strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;span&gt;
+            {{message}}
+            {{msg.length}}
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>main.js</strong></p>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        message:&quot;this is a message&quot;,
+        msg:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]
+    }
+})
+</code></pre>
+<h2 id="2-v-model指令双向绑定与v-show">2、v-model指令双向绑定与v-show</h2>
+<p><strong>v-model</strong>实现form表单与输出的双向绑定</p>
+<p><strong>v-show</strong>当<strong>name</strong>里面为<strong>空值</strong>时，整个<strong>span</strong>表则不可见，当<strong>name</strong>里有值时，整个span标签才可见</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div&gt;
+            &lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;
+            &lt;span v-show=&quot;name&quot;&gt;您的名字是：{{name}}&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        message:&quot;this is a message&quot;,
+        msg:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],
+        name:'今晚吃什么'
+    }
+})
+</code></pre>
+<p><strong>v-model.trim</strong>：去除开头结尾的空格</p>
+<p><strong>v-model.number</strong>：限定输入的类型为数字</p>
+<h2 id="3-v-for指令">3、v-for指令</h2>
+<p><strong>v-for</strong>用于遍历data中的数组</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;li v-for=&quot;li in msg&quot;&gt;{{li.name}}------{{li.price}}元&lt;/li&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>main.js</strong></p>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        msg:[{name:&quot;老姜&quot;,price:&quot;10&quot;},
+            {name:&quot;蒜&quot;,price:&quot;5&quot;},
+            {name:&quot;大葱&quot;,price:&quot;9&quot;}
+        ]
+    }
+})
+</code></pre>
+<h2 id="4-v-bind-标签属性值绑定指令">4、v-bind 标签属性值绑定指令</h2>
+<p>以下例子中，a标签中的href属性与data中的url进行了绑定</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;a v-bind:href=&quot;url&quot;&gt;点我&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        url:&quot;https://www.taobao.com&quot;
+    }
+})
+</code></pre>
+<h2 id="5-v-on事件绑定">5、v-on事件绑定</h2>
+<pre><code class="language-html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;button v-on:click=&quot;onClick&quot;&gt;点我&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    methods:{		//方法写在methods里，数据写在data里
+        onClick :function(){
+            alert(&quot;按钮被点击&quot;)
+        }
+    }
+})
+</code></pre>
+<p>多个事件绑定、<strong>v-on</strong>里面所绑定的事件与执行函数必须存在</p>
+<pre><code class="language-html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;button v-on=&quot;{mouseenter:onEnter,mouseleave:onOut}&quot;&gt;点我&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    methods:{
+        onEnter :function(){
+            console.log(&quot;鼠标移入&quot;)
+        },
+        onOut :function(){
+            console.log(&quot;鼠标移出&quot;)
+        }
+    }
+})
+</code></pre>
+<p>用于判断指定数据，如果判定为<strong>false</strong>，则不显示当前属性所在的标签</p>
+<pre><code class="language-html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div v-if=&quot;role == 'admin'&quot;&gt;
+            管理员您好
+        &lt;/div&gt;
+        &lt;div v-else-if=&quot;role == 'hr'&quot;&gt;
+            hr正在核验
+        &lt;/div&gt;
+        &lt;div v-else&gt;
+            谁也不是
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        role:&quot;cc&quot;
+    }
+})
+</code></pre>
+<h2 id="7-计算属性">7、计算属性</h2>
+<p>关键字<strong>computed</strong>，与methods不同的是：<strong>computed</strong>在数据没有发生改变的情况下，是从缓存中读取，而methods是每次都会计算一次，相比较而言，computed会更加节省性能</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;table border=&quot;1&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;学科&lt;/td&gt;
+            &lt;td&gt;成绩&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;数学&lt;/td&gt;
+            &lt;td&gt;{{math}}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;物理&lt;/td&gt;
+            &lt;td&gt;{{phs}}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;英语&lt;/td&gt;
+            &lt;td&gt;{{eng}}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;总分&lt;/td&gt;
+            &lt;td&gt;{{sum}}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;平均分&lt;/td&gt;
+            &lt;td&gt;{{avg}}&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        math:90,
+        phs:80,
+        eng:30
+    },
+    computed:{
+        sum:function(){
+            return this.math + this.phs + this.eng
+        },
+        avg:function(){
+            return Math.round(this.sum/3)  
+        }
+    }
+})
+</code></pre>
+<h2 id="8-组件自定义">8、组件（自定义）</h2>
+<p>关键字<strong>Vue.component</strong>，<strong>template</strong>设置组件里的具体内容</p>
+<p>定义好组件后需要<strong>实例化Vue</strong>才能执行</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;alert&gt;&lt;/alert&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>全局组件</strong>，new的每一个vue对象都可以调用</p>
+<pre><code class="language-javascript">Vue.component(&quot;alert&quot;,{
+    template:'&lt;button @click=&quot;on_click&quot;&gt;弹弹弹&lt;/button&gt;',
+    methods:{
+        on_click:function(){
+            alert(&quot;Yo&quot;)
+        }
+    }
+})
+var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+})
+</code></pre>
+<p>或者按照以下写法**(局部组件，仅在new对象内的#app上有效)**</p>
+<pre><code class="language-javascript">new Vue({
+    el:&quot;#app&quot;,
+    component:{
+        alert:{		//alert是自定义组件在html中的名称
+            template:'&lt;button @click=&quot;on_click&quot;&gt;弹弹弹&lt;/button&gt;',
+        	methods:{
+                on_click:function(){
+                    alert(&quot;Yo&quot;)
+            }
+        }
+    }
+})
+</code></pre>
+<h2 id="9-组件通信">9、组件通信</h2>
+<p><strong>父级传子级</strong>，关键字：<strong>props</strong></p>
+<p>例：标签属性传向Vue</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;user msg=&quot;muoauren&quot;&gt;&lt;/user&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">Vue.component(&quot;user&quot;,{
+    template:'&lt;a href=&quot;&quot;&gt;{{msg}}&lt;/a&gt;',
+    props:['msg'],
+})
+var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+})
+</code></pre>
+<p><strong>子级传父级</strong>，方法：父级中定义事件，在子级中触发</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;blacne&gt;&lt;/blacne&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">Vue.component(&quot;blacne&quot;,{
+    template:`&lt;div&gt;
+                &lt;show @show-balance=&quot;show_balance = true&quot;&gt;   
+                &lt;/show&gt; 
+                &lt;div v-if=&quot;show_balance&quot;&gt;
+                	您当前余额为90
+            	&lt;/div&gt;
+            &lt;/div&gt;
+            `,
+    data:function(){
+        return{
+            show_balance:false
+        }
+    }   
+})
+Vue.component(&quot;show&quot;,{
+    template:'&lt;button @click=&quot;on_click()&quot;&gt;显示余额&lt;/button&gt;',
+
+    methods:{
+        on_click(){
+            //console.log(&quot;方法已经执行&quot;)
+            this.$emit('show-balance',{a:1,b:2})	//$emit，触发show-balance事件
+            
+        }
+    }
+})
+var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+})
+</code></pre>
+<h2 id="10-同级组件通信">10、同级组件通信</h2>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;huahua&gt;&lt;/huahua&gt;
+    &lt;shuandan&gt;&lt;/shuandan&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">var Event = new Vue()		//用于传递信息
+Vue.component(&quot;huahua&quot;,{
+    template:`
+        &lt;div&gt;
+            我说:&lt;input @keyup=&quot;on_change&quot; v-model=&quot;i_said&quot;&gt;&lt;/input&gt;
+        &lt;/div&gt;
+    `,
+    methods:{
+        on_change(){
+            Event.$emit(&quot;huahua-said-something&quot;,this.i_said)    //触发huahua-said-something事件，传递i_said值
+        }
+    },
+    data:function(){
+        return {
+            i_said:&quot;&quot;
+        }
+    }
+})
+Vue.component(&quot;shuandan&quot;,{
+    template:`
+        &lt;div&gt;花花说：{{huahua_said}}&lt;/div&gt;
+    `,
+    data:function(){
+        return {
+            huahua_said:&quot;&quot;
+        }
+    },
+    mounted:function(){		//mounted是一个钩子函数
+        var me = this
+        Event.$on(&quot;huahua-said-something&quot;,(data)=&gt;{ //监听huahua-said-something事件，使用回调函数接收花花传递的信息
+            me.huahua_said = data
+        })
+    }
+})
+var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+})
+</code></pre>
+<h2 id="11-过滤器">11、过滤器</h2>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;price&quot;/&gt; {{price | curency}} 
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">Vue.filter(&quot;curency&quot;,(val)=&gt;{
+    if(!val){
+        val = 0
+    }
+    return val + &quot;元&quot;
+})
+var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        price:10
+    }
+})
+</code></pre>
+<h2 id="12-自定义指令">12、自定义指令</h2>
+<p>关键字：<strong>Vue.directive</strong></p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;span v-pin=&quot;true&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">//el为v-pin指令所在的元素，binding为v-pin指令所携带的值
+Vue.directive(&quot;pin&quot;,(el,binding)=&gt;{
+    var c = binding.value;
+    console.log(c)
+})
+var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+})
+</code></pre>
+<h2 id="13-插槽slot">13、插槽slot</h2>
+<p>对模板插入具体想要的内容</p>
+<p>如以下：讲<strong>插入😔</strong>字符插入到模板中</p>
+<pre><code class="language-javascript">&lt;div id=&quot;app&quot;&gt;
+    &lt;panel&gt;		&lt;!----&gt;
+        &lt;div slot=&quot;content&quot;&gt;
+            插入😔
+        &lt;/div&gt;
+    &lt;/panel&gt;
+&lt;/div&gt;
+
+&lt;template id=&quot;panel-tpl&quot;&gt;
+    &lt;div class=&quot;panel&quot;&gt;
+            &lt;div  style=&quot;width: 50px; height:50px ; background-color: aqua ;&quot;&gt;
+                &lt;slot name=&quot;content&quot;&gt;默认值&lt;/slot&gt;
+            &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<pre><code class="language-javascript">Vue.component('panel',{
+    template:&quot;#panel-tpl&quot;,
+})
+var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+})
+</code></pre>
+<h1 id="vue-router入门">vue-router入门</h1>
+<h2 id="1-demo使用">1、Demo使用</h2>
+<p>**注意：**Vue与VueRouter的版本需要匹配，否则运行不了</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;h1&gt;Hello App!&lt;/h1&gt;
+    &lt;p&gt;
+        &lt;!--使用 router-link 组件进行导航 --&gt;
+        &lt;!--通过传递 `to` 来指定链接 --&gt;
+        &lt;!--`&lt;router-link&gt;` 将呈现一个带有正确 `href` 属性的 `&lt;a&gt;` 标签--&gt;
+        &lt;router-link to=&quot;/&quot;&gt;Go to Home&lt;/router-link&gt;
+        &lt;router-link to=&quot;/about&quot;&gt;Go to About&lt;/router-link&gt;
+    &lt;/p&gt;
+    &lt;!-- 路由出口 --&gt;
+    &lt;!-- 路由匹配到的组件将渲染在这里 --&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">const Home = { template: '&lt;div&gt;Home&lt;/div&gt;' }
+const About = { template: '&lt;div&gt;About&lt;/div&gt;' }
+
+// 2. 定义一些路由
+// 每个路由都需要映射到一个组件。
+// 我们后面再讨论嵌套路由。
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+]
+
+// 3. 创建路由实例并传递 `routes` 配置
+// 你可以在这里输入更多的配置，但我们在这里
+// 暂时保持简单
+const router = VueRouter.createRouter({
+  // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
+  history: VueRouter.createWebHashHistory(),
+  routes, // `routes: routes` 的缩写
+})
+
+// 5. 创建并挂载根实例
+const app = Vue.createApp({})
+//确保 _use_ 路由实例使
+//整个应用支持路由。
+app.use(router)
+
+app.mount('#app')
+
+// 现在，应用已经启动了！
+</code></pre>
+<h2 id="2-传参以及获取参数">2、传参以及获取参数</h2>
+<p>URL:<strong>http://127.0.0.1:5500/#/user/张三</strong></p>
+<p>**方式1：**动态路由</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;div&gt;
+        &lt;router-link to=&quot;/user/张三&quot;&gt;张三&lt;/router-link&gt;
+        &lt;router-link to=&quot;/user/李四&quot;&gt;李四&lt;/router-link&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">const User = { template: '&lt;div&gt;我叫：{{ $route.params.name}} &lt;/div&gt;' }
+
+const routes = [
+  { path:'/user/:name',component:User}
+]
+const router = VueRouter.createRouter({
+  // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
+  history: VueRouter.createWebHashHistory(),
+  routes, // `routes: routes` 的缩写
+})
+const app = Vue.createApp({})
+app.use(router)
+app.mount('#app')
+</code></pre>
+<p>**方式2：**url传参</p>
+<p>URL：<strong>http://127.0.0.1:5500/#/user/张三?age=10</strong></p>
+<p>使用**$route.query.age**获取age的值</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;div&gt;
+        &lt;router-link to=&quot;/user/张三&quot;&gt;张三&lt;/router-link&gt;
+        &lt;router-link to=&quot;/user/李四&quot;&gt;李四&lt;/router-link&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">const User = { template: '&lt;div&gt;我叫：{{ $route.params.name}}---已经{{$route.query.age}}岁了 &lt;/div&gt;' }
+
+const routes = [
+  { path:'/user/:name',component:User}
+]
+const router = VueRouter.createRouter({
+  // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
+  history: VueRouter.createWebHashHistory(),
+  routes, // `routes: routes` 的缩写
+})
+const app = Vue.createApp({})
+app.use(router)
+app.mount('#app')
+</code></pre>
+<h2 id="3-子路由">3、子路由</h2>
+<p>在父级路由中加入children属性</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;div&gt;
+        &lt;router-link to=&quot;/user/张三&quot;&gt;张三&lt;/router-link&gt;
+        &lt;router-link to=&quot;/user/李四&quot;&gt;李四&lt;/router-link&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">//方式1：里面:to使用v-bind绑定to属性
+const User = { template: `&lt;div&gt;我叫：{{ $route.params.name}}
+    &lt;router-link :to=&quot;'/user/' + $route.params.name + '/more'&quot;&gt;更多信息&lt;/router-link&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;` }
+
+//方式2：直接使用to属性跳转more，但是加入append属性
+const User = { template: `&lt;div&gt;我叫：{{ $route.params.name}}
+    &lt;router-link to=&quot;more&quot; append&gt;更多信息&lt;/router-link&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;` }
+
+const routes = [
+  { 
+    path:'/user/:name',
+    component:User,
+    children:[{
+        path:&quot;more&quot;,
+        component:{
+            template:`
+                &lt;div&gt;
+                    用户{{$route.params.name}}的详细信息
+                    Leada  adahhhaiu atas shtha ahdaoihd thsissr iaii ahdha
+                &lt;/div&gt;
+            `
+        }
+    }]
+    }
+]
+</code></pre>
+<h2 id="4-手动访问与传参">4、手动访问与传参</h2>
+<p>暂无</p>
+<h2 id="5-命名视图">5、命名视图</h2>
+<p>当模板中出现多个<strong>router-view</strong>标签时，可以给router-view加入name属性来指定不同的组件</p>
+<p>如：</p>
+<pre><code class="language-vue">&lt;template&gt;
+    &lt;h1&gt;宁当前在首页&lt;/h1&gt;
+        &lt;router-link to=&quot;/content&quot;&gt;详情&lt;/router-link&gt;
+        &lt;router-link to=&quot;/main&quot;&gt;首页&lt;/router-link&gt;
+        &lt;router-view name=&quot;AAA&quot;&gt;&lt;/router-view&gt;		&lt;!--其中的AAA与BBB分别在路由配置文件中配置--&gt;
+        &lt;router-view name=&quot;BBB&quot;&gt;&lt;/router-view&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default {
+        name:&quot;maIn&quot;
+    }
+&lt;/script&gt;
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>
+<p><strong>/router/index.js</strong></p>
+<pre><code class="language-javascript">const route = createRouter({
+    history:createWebHashHistory(),
+    routes:[
+        {
+            path:&quot;/main&quot;,
+            name:&quot;main&quot;,
+            components:{
+                default:maIn
+            }
+        },
+        {
+            //路由路径
+            path:&quot;/content&quot;,
+            name:&quot;content&quot;,
+            //跳转的组件
+            components:{
+                default:conTent,	//default：默认对应的组件必须得有，否则直接加名字渲染不了
+                BBB:conTent		//router-view的name属性与此对应
+            }
+        }
+    ]
+})
+export default route
+</code></pre>
+<h2 id="6-导航钩子">6、导航钩子</h2>
+<p>可以理解为中间件</p>
+<p>在**/router/index.js**文件中</p>
+<pre><code class="language-javascript">const route = createRouter({
+    history:createWebHashHistory(),
+    routes:[
+        {
+            path:&quot;/main&quot;,
+            name:&quot;main&quot;,
+            components:{
+                default:maIn
+            }
+        },
+        {
+            //路由路径
+            path:&quot;/content&quot;,
+            name:&quot;content&quot;,
+            //跳转的组件
+            components:{
+                default:conTent,
+                BBB:conTent
+            }
+        }
+    ]
+})
+
+route.beforeEach((to,from,next)=&gt;{
+    console.log(from.path)
+    next()
+})
+</code></pre>
+<h1 id="axios极简入门">Axios极简入门</h1>
+<h2 id="示例">示例</h2>
+<pre><code class="language-javascript">var app = new Vue({
+    el:&quot;#app&quot;,		//挂载到id为app的元素上
+    data:{
+        message:&quot;this is a message&quot;,
+        msg:null
+    },
+    mounted(){
+        axios.get(&quot;./data.json&quot;).then((res)=&gt;{
+            console.log(res.data)
+            this.msg = res.data		//将数据加载到Vue对象的data属性中
+        })
+    }
+})
+</code></pre>
+<h1 id="vue-cli脚手架极简入门">Vue-cli脚手架极简入门</h1>
+<h2 id="1-生成脚手架">1、生成脚手架</h2>
+<pre><code class="language-shell">vue create ProjectName
+</code></pre>
+<h2 id="2-配置vue-router使用">2、配置Vue-router使用</h2>
+<p><strong>main.js</strong></p>
+<pre><code class="language-javascript">import { createApp } from 'vue'
+import App from './App.vue'
+import route from &quot;./router&quot;	//为自己创建的router文件夹，专门存放路由配置文件
+
+createApp(App).use(route).mount('#app')
+</code></pre>
+<p><strong>App.vue</strong></p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;h1&gt;Vue-Router&lt;/h1&gt;
+      &lt;router-link to=&quot;/main&quot;&gt;首页&lt;/router-link&gt;		&lt;!--设置跳转组件--&gt;
+      &lt;router-link to=&quot;/content&quot;&gt;详情&lt;/router-link&gt;
+      &lt;router-view&gt;&lt;/router-view&gt;					&lt;!--组件渲染出口--&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+
+
+export default {
+  name: 'App',
+
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+&lt;/style&gt;
+</code></pre>
+<p><strong>/components/conTent.vue</strong></p>
+<pre><code class="language-vue">&lt;template&gt;
+    &lt;h1&gt;内容详情页&lt;/h1&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    export default {
+        name:&quot;conTent&quot;
+    }
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>
+<p><strong>/router/index.js</strong></p>
+<pre><code class="language-javascript">import  { createWebHashHistory,createRouter } from &quot;vue-router&quot;
+import conTent from &quot;../components/conTent.vue&quot;		//导入组件
+import maIn from &quot;../components/Main.vue&quot;
+
+const route = createRouter({
+    history:createWebHashHistory(),
+    routes:[
+        {
+            path:&quot;/main&quot;,
+            name:&quot;main&quot;,
+            component:maIn
+        },
+        {
+            //路由路径
+            path:&quot;/content&quot;,
+            name:&quot;content&quot;,
+            //跳转的组件
+            component:conTent
+        }
+    ]
+})
+
+export default route
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://muouren7.github.io/post/nodejs-xue-xi-yu-mongodb-kuai-su-shang-shou/" class="post-title gt-a-link">
+                    Node.js学习与MongoDB快速上手
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://muouren7.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

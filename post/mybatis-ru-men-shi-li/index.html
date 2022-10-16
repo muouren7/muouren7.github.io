@@ -1,0 +1,259 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Mybatis入门示例 | muouren7のBlog</title>
+
+<link rel="shortcut icon" href="https://muouren7.github.io/favicon.ico?v=1665903129413">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://muouren7.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            muouren7のBlog
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1665903129413"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Mybatis入门示例
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-10-14 ·
+                    </time>
+                    
+                        <a href="https://muouren7.github.io/tag/5idr5OfZX/" class="post-tags">
+                            # mybatis
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="mybatis">Mybatis</h1>
+<h2 id="mybatis入门配置">mybatis入门配置</h2>
+<p>1、在项目工程下导入<strong>mybatis</strong>的<strong>jar</strong>包，然后创建mybatis的配置文件，创建<strong>mybatis-config.xml</strong>文件，然后添加以下内容：</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+    &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;/&gt;	&lt;!--value中为连接数据库的驱动包名类名--&gt;
+                &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306&quot;/&gt;	&lt;!--连接数据库url地址--&gt;
+                &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;		&lt;!--用户名--&gt;
+                &lt;property name=&quot;password&quot; value=&quot;123456&quot;/&gt;		&lt;!--密码--&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>2、配置数据库字段与实体类的映射，可以使用<strong>lombok</strong>+<strong>注解</strong>的方式，同时创建映射关系的<strong>TestMapper.xml</strong></p>
+<pre><code class="language-java">import lombok.Data;
+@Data
+public class User {
+    int N_USER_ID;				//字段名最好与数据库中的字段名保持一致，否则可能会映射失败
+    String VC_LOGIN_NAME;
+    String VC_PASSWORD;
+}
+</code></pre>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;TestMapper&quot;&gt;
+    &lt;select id=&quot;selectUser&quot; resultType=&quot;Test.User&quot;&gt;		&lt;!--resultType中填写数据库数据要映射的实体类，比如这里要映射到Test包下的User类中--&gt;
+        select * from t_user
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<p>3、然后再在<strong>mybatis-config.xml</strong>中插入以下代码</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+    &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;/&gt;	&lt;!--value中为连接数据库的驱动包名类名--&gt;
+                &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306&quot;/&gt;	&lt;!--连接数据库url地址--&gt;
+                &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;		&lt;!--用户名--&gt;
+                &lt;property name=&quot;password&quot; value=&quot;123456&quot;/&gt;		&lt;!--密码--&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+    
+    &lt;mappers&gt;
+    	&lt;mapper url=&quot;file:TestMapper.xml&quot;/&gt;		&lt;!--url中是mapper映射文件的地址--&gt;
+    &lt;/mappers&gt;
+    
+&lt;/configuration&gt;
+</code></pre>
+<p>4、在主方法中写下以下代码，并运行</p>
+<pre><code class="language-java">package Test;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
+public class MainTest {
+    public static void main(String[] args) throws FileNotFoundException {
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(new FileInputStream(&quot;mybatis-config.xml&quot;));
+        try (SqlSession sqlSession = sqlSessionFactory.openSession(true)){
+            List&lt;User&gt; list = sqlSession.selectList(&quot;selectUser&quot;);		//参数为mapper映射中的id，执行指定mapper中的语句
+            for(User user:list){
+                System.out.println(user.getN_USER_ID()+&quot;    &quot;+user.getVC_LOGIN_NAME()+&quot;     &quot;+user.getVC_PASSWORD());
+            }
+        }
+    }
+}
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://muouren7.github.io/post/数据结构与算法（一）/" class="post-title gt-a-link">
+                    数据结构与算法（一）
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://muouren7.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
