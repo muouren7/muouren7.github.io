@@ -1,7 +1,7 @@
 ---
 title: 'Springboot笔记（三）Redis'
 date: 2022-10-14 16:06:38
-tags: [mybatis]
+tags: [redis]
 published: true
 hideInList: false
 feature: 

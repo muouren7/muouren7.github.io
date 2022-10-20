@@ -1,7 +1,7 @@
 ---
 title: 'Springboot笔记（二）Git版本控制'
 date: 2022-10-14 16:06:38
-tags: [mybatis]
+tags: [git]
 published: true
 hideInList: false
 feature: 

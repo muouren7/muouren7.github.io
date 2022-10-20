@@ -1,7 +1,7 @@
 ---
 title: 'SpringCloud笔记（一）'
 date: 2022-10-14 16:06:38
-tags: [mybatis]
+tags: [springcloud]
 published: true
 hideInList: false
 feature: 

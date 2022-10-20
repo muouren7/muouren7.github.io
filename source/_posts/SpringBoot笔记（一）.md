@@ -1,7 +1,7 @@
 ---
 title: 'SpringBoot笔记（一）一站式开发'
 date: 2022-10-14 16:06:38
-tags: [mybatis]
+tags: [springboot]
 published: true
 hideInList: false
 feature: 

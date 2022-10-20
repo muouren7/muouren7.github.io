@@ -1,7 +1,7 @@
 ---
 title: 'Java SSM笔记（三）'
 date: 2022-10-14 16:06:38
-tags: [mybatis]
+tags: [SpringSecurity]
 published: true
 hideInList: false
 feature: 

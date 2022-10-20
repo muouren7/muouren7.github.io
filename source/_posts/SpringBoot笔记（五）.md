@@ -1,7 +1,7 @@
 ---
 title: 'SpringBoot笔记（五）Linux'
 date: 2022-10-14 16:06:38
-tags: [mybatis]
+tags: [linux]
 published: true
 hideInList: false
 feature: 
