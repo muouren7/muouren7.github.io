@@ -143,7 +143,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 # url: https://muouren7.github.io/
-url: http://xingzhiblog.top
+url: http://muouren7.top
 # url: http://localhost:4000/
 root: /
 permalink: :year/:month/:day/:title/
@@ -277,7 +277,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: aircloud
+# theme: aircloud
+# theme: landscape
+theme: hexo-aircloud-blog
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

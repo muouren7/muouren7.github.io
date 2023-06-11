@@ -1,5 +1,5 @@
 ---
-title: 'JavaSE笔记（三）'
+title: 'JavaSE笔记（三）面向对象基础篇'
 date: 2022-10-14 16:06:38
 tags: [JavaSE]
 published: true

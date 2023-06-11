@@ -1,5 +1,5 @@
 ---
-title: 'JavaSE笔记（二）'
+title: 'JavaSE笔记（二）面向过程篇'
 date: 2022-10-14 16:06:38
 tags: [JavaSE]
 published: true
