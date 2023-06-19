@@ -277,9 +277,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: aircloud
+theme: aircloud
 # theme: landscape
-theme: hexo-aircloud-blog
+# theme: hexo-aircloud-blog
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
