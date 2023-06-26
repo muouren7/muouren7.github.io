@@ -101,7 +101,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E3%80%81%E5%8F%8C%E5%BC%80%E3%80%81%E6%B1%89%E5%8C%96"><span class="toc-text">Apk文件结构、双开、汉化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#apk%E7%BB%93%E6%9E%84"><span class="toc-text">apk结构</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E3%80%81%E5%8F%8C%E5%BC%80%E3%80%81%E6%B1%89%E5%8C%96"><span class="toc-text">Apk文件结构、双开、汉化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#apk%E7%BB%93%E6%9E%84"><span class="toc-text">apk结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%89%E5%8C%96"><span class="toc-text">汉化</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -219,6 +219,17 @@
 <td>resources.arsc是编译后的二进制资源文件，它是一个映射表，映射着资源和id，通过R文件中的id就可以找到对应的资源</td>
 </tr>
 </tbody></table>
+<h4 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h4><p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261031493.png"></p>
+<p>以不包含壳的apk为例，若要将以下信息修改为中文，先在 <strong>mt管理器</strong> 中进行查看，使用开发者助手选中这段文字，</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261106622.png"></p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261107324.png"></p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261108272.png"></p>
+<p>选中对应的文本进行复制</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261109551.png"></p>
+<p>然后在Mt管理器中进行全局搜索（选中高级）</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261110319.png"></p>
+<p>找到对应的dex文件或arsc文件，点进去 修改就行了</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261132802.png"></p>
 
         
         <br />
