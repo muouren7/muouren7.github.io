@@ -75,23 +75,28 @@ apk 全称 Android Package，它相当于一个压缩文件，只要在电脑上
 
 
 
+#### 汉化
+
+![](https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261031493.png)
 
 
 
+以不包含壳的apk为例，若要将以下信息修改为中文，先在 **mt管理器** 中进行查看，使用开发者助手选中这段文字，
 
+![](https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261106622.png)
 
+![](https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261107324.png)
 
+![](https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261108272.png)
 
+选中对应的文本进行复制
 
+![](https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261109551.png)
 
+然后在Mt管理器中进行全局搜索（选中高级）
 
+![](https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261110319.png)
 
+找到对应的dex文件或arsc文件，点进去 修改就行了
 
-
-
-
-
-
-
-
-
+![](https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202306261132802.png)
