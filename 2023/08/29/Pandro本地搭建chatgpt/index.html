@@ -13,7 +13,7 @@
 
     <title>
         
-        muouren7のBlog
+        Pandro本地搭建chatgpt - muouren7のBlog
         
     </title>
 
@@ -59,7 +59,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -100,6 +100,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    
+</div>
+    
 </div>
 
 
@@ -125,92 +129,44 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2022-10-14</div>
-        <div class="post-info">
-            <a href="http://muouren7.top/2022/10/14/teng-xun-yun-vps-da-jian-shi-yong-v2ray-jin-xing-fan-qiang/">
-                <h3>
-                    腾讯云vps搭建（使用V2ray进行翻墙）
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#v2ray" title="v2ray">v2ray</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#vpn" title="vpn">vpn</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#翻墙" title="翻墙">翻墙</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#vps" title="vps">vps</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        Pandro本地搭建chatgpt
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2022-10-14</div>
-        <div class="post-info">
-            <a href="http://muouren7.top/2022/10/14/Vue%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
-                <h3>
-                    Vue快速入门
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-08-29 08:30:04</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#教程" title="教程">教程</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2022-10-14</div>
-        <div class="post-info">
-            <a href="http://muouren7.top/2022/10/14/nodejs-xue-xi-yu-mongodb-kuai-su-shang-shou/">
-                <h3>
-                    Node.js学习与MongoDB快速上手
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
-                <span>/</span>
-                
-                
-            </p>
+    <div class="post-content no-indent">
+        <p>1、下载并安装Docker <a target="_blank" rel="noopener" href="https://www.docker.com/">Docker官网</a></p>
+<p>2、使用潘多拉 (Pandora) <a target="_blank" rel="noopener" href="https://github.com/pengzhile/pandora">pengzhile&#x2F;pandora</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull pengzhile/pandora</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run  -e PANDORA_CLOUD=cloud -e PANDORA_SERVER=0.0.0.0:8899 -p 8899:8899 -d pengzhile/pandora</span><br></pre></td></tr></table></figure>
+
+
+        
+        <br />
+        <div id="comment-container">
         </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
     </div>
-    
 </div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/page/2/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
     </div>
 </div>
@@ -258,7 +214,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 

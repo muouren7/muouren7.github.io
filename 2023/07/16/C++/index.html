@@ -13,7 +13,7 @@
 
     <title>
         
-        muouren7のBlog
+        C++ - muouren7のBlog
         
     </title>
 
@@ -59,7 +59,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -100,6 +100,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#GCC%E5%91%BD%E4%BB%A4"><span class="toc-text">GCC命令</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -125,92 +129,46 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2022-10-14</div>
-        <div class="post-info">
-            <a href="http://muouren7.top/2022/10/14/teng-xun-yun-vps-da-jian-shi-yong-v2ray-jin-xing-fan-qiang/">
-                <h3>
-                    腾讯云vps搭建（使用V2ray进行翻墙）
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#v2ray" title="v2ray">v2ray</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#vpn" title="vpn">vpn</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#翻墙" title="翻墙">翻墙</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#vps" title="vps">vps</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        C++
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2022-10-14</div>
-        <div class="post-info">
-            <a href="http://muouren7.top/2022/10/14/Vue%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
-                <h3>
-                    Vue快速入门
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-07-16 21:21:11</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#C++" title="C++">C++</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#gcc" title="gcc">gcc</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2022-10-14</div>
-        <div class="post-info">
-            <a href="http://muouren7.top/2022/10/14/nodejs-xue-xi-yu-mongodb-kuai-su-shang-shou/">
-                <h3>
-                    Node.js学习与MongoDB快速上手
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
-                <span>/</span>
-                
-                
-            </p>
+    <div class="post-content no-indent">
+        <h3 id="GCC命令"><a href="#GCC命令" class="headerlink" title="GCC命令"></a>GCC命令</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc <span class="literal">-fexec-charset</span>=GBK <span class="literal">-I</span> head test.c func.c newfunc.c <span class="literal">-o</span> aaa</span><br></pre></td></tr></table></figure>
+
+<p><strong>-fexec-charset&#x3D;GBK</strong> 指定输出编译后的二进制文件编码格式，GBK和windows系统默认的编码格式保持一致，不带参数默认是utf-8，会乱码，</p>
+<p><strong>-I</strong> 指定头文件所在的文件夹</p>
+<p><strong>-o</strong> 指定链接后的可执行文件</p>
+
+        
+        <br />
+        <div id="comment-container">
         </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
     </div>
-    
 </div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/page/2/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
     </div>
 </div>
@@ -258,7 +216,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
