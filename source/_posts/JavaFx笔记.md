@@ -89,13 +89,13 @@ public class JavaFxMain extends Application {
 
 
 
-
-
-
-
 ​	其他笔记
 
 [在线文档]([JavaFX 概述 (yuque.com)](https://www.yuque.com/chengxuyuanyideng/wmiqe2/kl9uvp))
+
+
+
+## 舞台
 
 
 
