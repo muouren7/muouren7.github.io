@@ -1,3 +1,10 @@
+---
+title: Linux常用命令
+tags: Linux
+---
+
+
+
 # Linux（快记）
 
 ## 1、文件管理
