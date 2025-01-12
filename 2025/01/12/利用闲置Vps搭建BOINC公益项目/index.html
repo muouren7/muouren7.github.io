@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="there is nothing">
+    <meta property="og:type" content="website">
+    <meta name="description" content="there is nothing">
+    <meta name="keyword"  content="神秘">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        利用闲置Vps搭建BOINC公益项目 - muouren7のBlog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 向所有抗争不公命运的力量 致敬！ </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/IMG/pro.png" />
+        </div>
+        <div class="name">
+            <i>muouren7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFBoinc"><span class="toc-text">什么是Boinc ?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85BOINC%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">云服务器安装BOINC客户端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-text">配置远程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85BOINC%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">本地安装BOINC客户端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE"><span class="toc-text">建议</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 向所有抗争不公命运的力量 致敬！ </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        利用闲置Vps搭建BOINC公益项目
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2025-01-12 15:16:07</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Vps" title="Vps">Vps</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#Boinc" title="Boinc">Boinc</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="什么是Boinc"><a href="#什么是Boinc" class="headerlink" title="什么是Boinc ?"></a>什么是Boinc ?</h1><p>BOINC 是 Berkeley Open Infrastructure for Network Computing 的首字母缩写，即伯克利开放式网络计算平台，是用于志愿计算和网格计算的开放的中间件系统。</p>
+<p>BOINC 最早是为了支持 SETI@home 项目而开发的，之后逐渐成了最为主流的分布式计算平台，为众多的数学、物理、化学、生命科学、地球科学等学科类别的项目所使用。BOINC 的开发目的是为了帮助研究人员更方便地获得分布在世界各地的志愿者的计算资源。</p>
+<p><img src="https://yinli.me/wp-content/uploads/2020/03/2020032614262345-1024x428.png" alt="Logo"></p>
+<h1 id="云服务器安装BOINC客户端"><a href="#云服务器安装BOINC客户端" class="headerlink" title="云服务器安装BOINC客户端"></a>云服务器安装BOINC客户端</h1><p>​	使用 xshell 连接服务器（也可以使用Putty） 执行安装命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install boinc-client</span><br></pre></td></tr></table></figure>
+
+<p>​	或者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install boinc-client</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置远程管理"><a href="#配置远程管理" class="headerlink" title="配置远程管理"></a>配置远程管理</h1><p>​	安装完成后开始配置远程管理，方便我们在电脑本地连接服务器查看项目进度 在root目录下新建文件 <code>cc_config.xml</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /root/cc_config.xml </span><br></pre></td></tr></table></figure>
+
+<p>​	按 i 进入编辑模式，输入以下内容后按 esc 退出，按： 输入wq 保存文本</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cc_config</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">options</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ncpus</span>&gt;</span>-1<span class="tag">&lt;/<span class="name">ncpus</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">allow_remote_gui_rpc</span>&gt;</span>1<span class="tag">&lt;/<span class="name">allow_remote_gui_rpc</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">options</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">cc_config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​	新建 <code>gui_rpc_auth.cfg</code> 文件，设置远程管理密码</p>
+<p>​	设置密码，内容为空则密码为空，保存。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">123456</span><br></pre></td></tr></table></figure>
+
+<p>​	开放TCP31416端口（腾讯云或阿里云直接在安全组上将此端口开放）</p>
+<p>测试运行 BIONC 项目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boinc</span><br></pre></td></tr></table></figure>
+
+<p>执行后会有一堆运行信息。如果显示有“Config: GUI RPC allowed from any host”，那么就应该配置成功了。 ctrl + c 退出 ，输入reboot重启服务器。</p>
+<p>以后运行的时候用命令（现在先执行一遍，服务器重启后需要重新执行）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boinc --daemon</span><br></pre></td></tr></table></figure>
+
+<h1 id="本地安装BOINC客户端"><a href="#本地安装BOINC客户端" class="headerlink" title="本地安装BOINC客户端"></a>本地安装BOINC客户端</h1><p>​	<a target="_blank" rel="noopener" href="https://boinc.berkeley.edu/download.php">下载地址</a>：<a target="_blank" rel="noopener" href="https://boinc.berkeley.edu/download.php">https://boinc.berkeley.edu/download.php</a></p>
+<p>然后打开运行 BOINC Manager ，切换到高级视图</p>
+<p><img src="https://www.yinli.me/wp-content/uploads/2020/03/2020032615184484.png" alt="高级视图"></p>
+<p>点击菜单的文件－选择计算机 输入服务器 IP ，然后输入刚才设置的密码，等待连接</p>
+<p><img src="https://yinli.me/wp-content/uploads/2020/03/2020032615204230.png" alt="输入"></p>
+<p>连接成功后，就可以选择要参加的项目</p>
+<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><p>​	强烈建议修改计算机参数设置，cpu 占用不要太高，不然有可能被 vps 厂商封号</p>
+<p><img src="https://www.yinli.me/wp-content/uploads/2020/03/2020032615274714.png" alt="修改cpu限制"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/muouren7">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>

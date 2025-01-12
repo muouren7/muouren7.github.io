@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="there is nothing">
+    <meta property="og:type" content="website">
+    <meta name="description" content="there is nothing">
+    <meta name="keyword"  content="神秘">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        搜索引擎语法 - muouren7のBlog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 向所有抗争不公命运的力量 致敬！ </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/IMG/pro.png" />
+        </div>
+        <div class="name">
+            <i>muouren7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="toc-text">图片搜索语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="toc-text">文件搜索语法：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 向所有抗争不公命运的力量 致敬！ </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        搜索引擎语法
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2025-01-12 15:16:07</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#搜索引擎" title="搜索引擎">搜索引擎</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <ol>
+<li><strong>基本搜索：</strong> 输入关键词即可进行基本搜索。<ul>
+<li>示例：<code>Python programming</code></li>
+</ul>
+</li>
+<li><strong>引号：</strong> 使用引号将词组括起来，以确保搜索结果包含完整的短语。<ul>
+<li>示例：<code>&quot;machine learning&quot;</code></li>
+</ul>
+</li>
+<li><strong>排除词：</strong> 使用减号 <code>-</code> 来排除特定词汇。<ul>
+<li>示例：<code>Linux -Ubuntu</code></li>
+</ul>
+</li>
+<li><strong>或操作：</strong> 使用 <code>OR</code> 或 <code>|</code> 来执行逻辑“或”操作。<ul>
+<li>示例：<code>Python OR Java</code> 或 <code>Python | Java</code></li>
+</ul>
+</li>
+<li><strong>站点限制：</strong> 使用 <code>site:</code> 来限制搜索结果为特定网站。<ul>
+<li>示例：<code>site:wikipedia.org Python</code></li>
+</ul>
+</li>
+<li><strong>文件类型：</strong> 使用 <code>filetype:</code> 来限制搜索结果为特定文件类型。<ul>
+<li>示例：<code>filetype:pdf machine learning</code></li>
+</ul>
+</li>
+<li><strong>相关性运算符：</strong> 使用 <code>related:</code> 查找与特定网站相关的其他网站。<ul>
+<li>示例：<code>related:github.com</code></li>
+</ul>
+</li>
+<li><strong>通配符：</strong> 使用 <code>*</code> 作为通配符，表示缺少的单词。<ul>
+<li>示例：<code>improve * skills</code></li>
+</ul>
+</li>
+<li><strong>范围搜索：</strong> 使用 <code>..</code> 表示一个数字范围。<ul>
+<li>示例：<code>Python 3..5</code></li>
+</ul>
+</li>
+<li><strong>定义搜索：</strong> 使用 <code>define:</code> 查找特定词的定义。</li>
+</ol>
+<ul>
+<li>示例：<code>define:serendipity</code></li>
+</ul>
+<ol>
+<li><strong>关键词附近搜索：</strong> 使用 <code>AROUND(n)</code> 查找两个关键词之间大约有 n 个词的页面。</li>
+</ol>
+<ul>
+<li>示例：<code>machine learning AROUND(5) algorithms</code></li>
+</ul>
+<ol>
+<li><strong>时间范围：</strong> 使用工具提供的时间过滤器或使用 <code>before:</code> 和 <code>after:</code> 来限制搜索结果的时间范围。</li>
+</ol>
+<ul>
+<li>示例：<code>Python programming before:2022</code></li>
+</ul>
+<h3 id="图片搜索语法："><a href="#图片搜索语法：" class="headerlink" title="图片搜索语法："></a>图片搜索语法：</h3><ol>
+<li><strong>搜索特定类型的图片：</strong><ul>
+<li>示例：<code>sunrise filetype:jpg</code></li>
+</ul>
+</li>
+<li><strong>搜索高分辨率图片：</strong><ul>
+<li>示例：<code>high resolution mountain scenery</code></li>
+</ul>
+</li>
+<li><strong>搜索特定颜色的图片：</strong><ul>
+<li>示例：<code>red rose color:blue</code></li>
+</ul>
+</li>
+<li><strong>搜索图片的来源：</strong><ul>
+<li>示例：<code>source:National Geographic</code></li>
+</ul>
+</li>
+<li><strong>搜索相似的图片：</strong><ul>
+<li>示例：<code>similar:example-image.jpg</code></li>
+</ul>
+</li>
+<li><strong>指定宽度为2K的图片：</strong><ul>
+<li>示例：<code>width:2048 pixels</code></li>
+</ul>
+</li>
+<li><strong>指定水平和垂直分辨率为2K的图片：</strong><ul>
+<li>示例：<code>dimensions:2048x1080</code></li>
+</ul>
+</li>
+<li><strong>限制高分辨率图片：</strong><ul>
+<li>示例：<code>high resolution dimensions:1920x1080</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="文件搜索语法："><a href="#文件搜索语法：" class="headerlink" title="文件搜索语法："></a>文件搜索语法：</h3><ol>
+<li><strong>搜索特定类型的文件：</strong><ul>
+<li>示例：<code>filetype:pdf Python tutorial</code></li>
+</ul>
+</li>
+<li><strong>搜索特定文件名：</strong><ul>
+<li>示例：<code>intitle:&quot;annual report&quot; filetype:doc</code></li>
+</ul>
+</li>
+<li><strong>搜索特定文件扩展名：</strong><ul>
+<li>示例：<code>ext:csv population data</code></li>
+</ul>
+</li>
+<li><strong>搜索特定文件大小：</strong><ul>
+<li>示例：<code>size:&gt;10MB</code></li>
+</ul>
+</li>
+<li><strong>搜索文件的创建或修改时间：</strong><ul>
+<li>示例：<code>filetype:pdf modified:2022</code></li>
+</ul>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/muouren7">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>

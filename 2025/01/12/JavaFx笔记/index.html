@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="there is nothing">
+    <meta property="og:type" content="website">
+    <meta name="description" content="there is nothing">
+    <meta name="keyword"  content="神秘">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        JavaFx笔记 - muouren7のBlog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 向所有抗争不公命运的力量 致敬！ </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/IMG/pro.png" />
+        </div>
+        <div class="name">
+            <i>muouren7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaFx%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">JavaFx环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E3%80%81%E5%B8%83%E5%B1%80%E3%80%81%E6%8E%A7%E4%BB%B6%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">场景、布局、控件简单示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%9E%E5%8F%B0"><span class="toc-text">舞台</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 向所有抗争不公命运的力量 致敬！ </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        JavaFx笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2025-01-12 15:16:07</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#JavaFx" title="JavaFx">JavaFx</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="JavaFx环境配置"><a href="#JavaFx环境配置" class="headerlink" title="JavaFx环境配置"></a>JavaFx环境配置</h2><p>1、下载JavaFx的SDK[JavaFx中文网](<a target="_blank" rel="noopener" href="https://gluonhq.com/products/javafx/">JavaFX - Gluon (gluonhq.com)</a>)，并解压</p>
+<p>2、IDEA创建新的Java项目，然后将解压后的JavaFx的SDK中的lib目录下所有的Jar包复制到项目下</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202304212116568.png" alt="jar包"></p>
+<p>3、在IDEA中，选择文件 -&gt; 项目结构 -&gt; 库，然后把SDK中所有的Jar包选中</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202304212120989.png" alt="添加"></p>
+<p>4、然后创建一个类，加入以下代码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaFxMain</span> <span class="keyword">extends</span> <span class="title class_">Application</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;这是我的第一个JavaFx程序&quot;</span>);</span><br><span class="line">        primaryStage.setMaxHeight(<span class="number">400</span>);</span><br><span class="line">        primaryStage.setMaxWidth(<span class="number">400</span>);</span><br><span class="line">        primaryStage.show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        launch();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5、进行启动配置，在程序实参部分加入以下代码，其中<strong>D:\Path\JavaFxSdk\openjfx-17.0.7_windows-x64_bin-sdk\javafx-sdk-17.0.7\lib</strong>部分即下载的SDK的存储位置，一定要到lib目录，配置完成后，重新添加应用的运行环境即可。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--module-path &quot;D:\Path\JavaFxSdk\openjfx-17.0.7_windows-x64_bin-sdk\javafx-sdk-17.0.7\lib&quot; --add-modules javafx.controls,javafx.fxml</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202304212128601.png" alt="配置"></p>
+<p>6、完成上述步骤后，点击运行，出现白色的窗口即说明配置完成。</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202304212132114.png" alt="运行"></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>JavaFx整体包括<strong>Stages 舞台</strong> <strong>Scenes 场景</strong> <strong>Scene Graphs 布局</strong> 以及控件(布局之中才是控件)</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/23145762/1650784177227-de6afb5c-7190-4e3e-9a24-a899ef74d504.png?x-oss-process=image/resize,w_382,limit_0" alt="架构"></p>
+<h3 id="场景、布局、控件简单示例"><a href="#场景、布局、控件简单示例" class="headerlink" title="场景、布局、控件简单示例"></a>场景、布局、控件简单示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaFxMain</span> <span class="keyword">extends</span> <span class="title class_">Application</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//舞台设置标题</span></span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;测试javaFx&quot;</span>);</span><br><span class="line">        <span class="comment">//布局</span></span><br><span class="line">        <span class="type">HBox</span> <span class="variable">hBox</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HBox</span>();</span><br><span class="line">        <span class="comment">//控件</span></span><br><span class="line">        <span class="type">Button</span> <span class="variable">button</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Button</span>(<span class="string">&quot;登录&quot;</span>);</span><br><span class="line">        <span class="comment">//将控件添加到布局中</span></span><br><span class="line">        hBox.getChildren().add(button);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//场景</span></span><br><span class="line">        <span class="type">Scene</span> <span class="variable">scene</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scene</span>(hBox, <span class="number">450</span>, <span class="number">250</span>);</span><br><span class="line">        <span class="comment">//将场景添加到舞台中</span></span><br><span class="line">        primaryStage.setScene(scene);</span><br><span class="line">        <span class="comment">//展示舞台</span></span><br><span class="line">        primaryStage.show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        launch();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果</p>
+<p><img src="https://muouren7hexo-1305003515.cos.ap-chengdu.myqcloud.com/HexoPic/202304212153337.png" alt="效果"></p>
+<p>​	其他笔记</p>
+<p>[在线文档](<a target="_blank" rel="noopener" href="https://www.yuque.com/chengxuyuanyideng/wmiqe2/kl9uvp">JavaFX 概述 (yuque.com)</a>)</p>
+<h2 id="舞台"><a href="#舞台" class="headerlink" title="舞台"></a>舞台</h2>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/muouren7">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>

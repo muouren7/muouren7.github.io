@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="there is nothing">
+    <meta property="og:type" content="website">
+    <meta name="description" content="there is nothing">
+    <meta name="keyword"  content="神秘">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Linux常用命令 - muouren7のBlog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 向所有抗争不公命运的力量 致敬！ </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/IMG/pro.png" />
+        </div>
+        <div class="name">
+            <i>muouren7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%EF%BC%88%E5%BF%AB%E8%AE%B0%EF%BC%89"><span class="toc-text">Linux（快记）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">1、文件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E3%80%81Linux%E7%9B%AE%E5%BD%95"><span class="toc-text">1.1、Linux目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E3%80%81%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-text">1.2、文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E8%A2%AB%E8%B5%8B%E4%BA%88777%E6%95%85%E9%9A%9C%E6%81%A2%E5%A4%8D"><span class="toc-text">1.3 所有文件被赋予777故障恢复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%9A%84%E8%A7%81%E8%AF%86"><span class="toc-text">1.4 文件与目录的见识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E5%A4%8D%E5%88%B6-%E7%A7%BB%E5%8A%A8"><span class="toc-text">1.5 复制\移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5%E6%89%93%E5%8C%85%E5%8E%8B%E7%BC%A9"><span class="toc-text">1.5打包压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9-vim"><span class="toc-text">1.6 文件修改 vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE"><span class="toc-text">1.7文件查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-%E5%85%B6%E4%BD%99"><span class="toc-text">1.8 其余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">1.9 常见问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="toc-text">2、磁盘管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-RAID%E7%AE%A1%E7%90%86"><span class="toc-text">2.1 RAID管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%88%86%E5%8C%BA%E7%AE%A1%E7%90%86"><span class="toc-text">2.2 分区管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E9%80%BB%E8%BE%91%E5%8D%B7%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="toc-text">2.3 逻辑卷配置管理</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 向所有抗争不公命运的力量 致敬！ </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Linux常用命令
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2025-01-12 15:16:07</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="Linux（快记）"><a href="#Linux（快记）" class="headerlink" title="Linux（快记）"></a>Linux（快记）</h1><h2 id="1、文件管理"><a href="#1、文件管理" class="headerlink" title="1、文件管理"></a>1、文件管理</h2><h3 id="1-1、Linux目录"><a href="#1-1、Linux目录" class="headerlink" title="1.1、Linux目录"></a>1.1、Linux目录</h3><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;boot</td>
+<td>系统启动相关文件，如内核 、initrd，以及grub</td>
+</tr>
+<tr>
+<td>&#x2F;dev</td>
+<td>设备</td>
+</tr>
+</tbody></table>
+<p>touch 创建空白文件</p>
+<p>mkdir 创建目录 -p 表示递归创建</p>
+<p>rm 删除文件 -r 删除目录（递归） -f 强制</p>
+<h3 id="1-2、文件权限"><a href="#1-2、文件权限" class="headerlink" title="1.2、文件权限"></a>1.2、文件权限</h3><p><strong>ls -la</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>权限项</th>
+<th>文件类型</th>
+<th>读</th>
+<th>写</th>
+<th>执行</th>
+<th>读</th>
+<th>写</th>
+<th>执行</th>
+<th>读</th>
+<th>写</th>
+<th>执行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字符表示</td>
+<td>d、l、c、s、p</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+</tr>
+<tr>
+<td>数字表示</td>
+<td></td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>权限分配</td>
+<td></td>
+<td></td>
+<td>文件所有者</td>
+<td></td>
+<td></td>
+<td>文件所属组用户</td>
+<td></td>
+<td></td>
+<td>其他用户</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>​			d:文件夹	l:链接文件	c:字符文件（如键盘）	b:块文件如磁盘分区</p>
+<p> <strong>chmod</strong>：改变权限</p>
+<p>chmod -r 递归修改权限</p>
+<table>
+<thead>
+<tr>
+<th>chmod</th>
+<th>u (所有者)<br />g （组）<br />o （其他人）<br />a （全部）</th>
+<th>+(加入)<br />-(除去)<br />&#x3D;(设定)</th>
+<th>r<br />w<br />x</th>
+<th>文件或目录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>容易犯错 chmod -r 777 &#x2F;</strong></p>
+<p><strong>chown</strong>：改变文件拥有者或所属群组</p>
+<p>chown -r 账号名称 文件或目录</p>
+<p>chown hik test 修改test文件所有者为hik</p>
+<p>chown -r 账号名称 :组名 文件或目录</p>
+<p>chown root:hik test</p>
+<p>修改test文件所有者为root，群组为hik</p>
+<h3 id="1-3-所有文件被赋予777故障恢复"><a href="#1-3-所有文件被赋予777故障恢复" class="headerlink" title="1.3 所有文件被赋予777故障恢复"></a>1.3 所有文件被赋予777故障恢复</h3><h3 id="1-4-文件与目录的见识"><a href="#1-4-文件与目录的见识" class="headerlink" title="1.4 文件与目录的见识"></a>1.4 文件与目录的见识</h3><p>ls -la 查看当前目录下文的详细信息</p>
+<p>du -sh 查看指定目录下文件的详细信息大小</p>
+<h3 id="1-5-复制-移动"><a href="#1-5-复制-移动" class="headerlink" title="1.5 复制\移动"></a>1.5 复制\移动</h3><p>cp -r &#x2F;源目录 &#x2F;目标目录</p>
+<p>mv &#x2F;源目录 &#x2F;目标目录</p>
+<p>远程拷贝</p>
+<p>scp -p (sshd服务端口) -r （递归）</p>
+<p>scp -p 5555 -r <a href="mailto:&#104;&#x69;&#x6b;&#64;&#x31;&#57;&#x32;&#46;&#49;&#x36;&#56;&#46;&#x31;&#x35;&#52;&#x2e;&#x34;">&#104;&#x69;&#x6b;&#64;&#x31;&#57;&#x32;&#46;&#49;&#x36;&#56;&#46;&#x31;&#x35;&#52;&#x2e;&#x34;</a>:&#x2F;home  &#x2F;home</p>
+<h3 id="1-5打包压缩"><a href="#1-5打包压缩" class="headerlink" title="1.5打包压缩"></a>1.5打包压缩</h3><table>
+<thead>
+<tr>
+<th>打包\压缩文件</th>
+<th>解包\解压文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tar -cvf xxx.tar &#x2F;home 打包压缩</td>
+<td>tar -xvf xx.tar 解包文件</td>
+</tr>
+<tr>
+<td>tar -zcvf xx.tar.gz &#x2F;home  打包并压缩</td>
+<td>tar -zxvf xx.tar.gz  解包并解压</td>
+</tr>
+<tr>
+<td>zip -r xx.zip &#x2F;home  压缩文件 (zip格式)</td>
+<td>unzip xx.zip 解压</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="1-6-文件修改-vim"><a href="#1-6-文件修改-vim" class="headerlink" title="1.6 文件修改 vim"></a>1.6 文件修改 vim</h3><p>vim xx.txt</p>
+<p>进入后是编辑模式</p>
+<p>按i进入输入模式</p>
+<p>按esc退出至末行模式</p>
+<table>
+<thead>
+<tr>
+<th>编辑模式</th>
+<th>输入模式</th>
+<th>末行模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移动光标<br />yy复制光标所在行<br />p 粘贴至光标处<br />dd 删除光标所在行</td>
+<td>i:insert 在光标处输入<br />v:visual，移动光标选择，配合y复制</td>
+<td>:wq 保存，退出<br />&#x2F;test 往末尾查到test字符<br />? test 往前查找test字符</td>
+</tr>
+</tbody></table>
+<h3 id="1-7文件查找"><a href="#1-7文件查找" class="headerlink" title="1.7文件查找"></a>1.7文件查找</h3><p>find 指定目录下 -name 文件名称</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-name</td>
+<td>匹配名称</td>
+</tr>
+<tr>
+<td>-user<br />-group</td>
+<td>匹配所有者<br />匹配组</td>
+</tr>
+<tr>
+<td>-size</td>
+<td>文件大小 +50kb 超过50kb的文件   -50kb 小于50kb的文件</td>
+</tr>
+<tr>
+<td>-mtime -n +n<br />-atime -n +n<br />-ctime -n +n</td>
+<td>匹配修改内容的时间<br />匹配访问文件的时间<br />匹配修改文件权限的时间<br />-n指n天以内  +n指n天以前</td>
+</tr>
+<tr>
+<td>-exec ……{};</td>
+<td>find的结果交给后边的命令处理</td>
+</tr>
+<tr>
+<td>|xagrs -i ……{}</td>
+<td>同上</td>
+</tr>
+</tbody></table>
+<p>find &#x2F;var -size -10M -size +1M -exec du -sh ();</p>
+<p>查找&#x2F;var目录下1m到10m大小的文件，并用于du -sh处理</p>
+<p>find &#x2F;var&#x2F; -mtime +10 -name “*.log” |xargs -i cp {} &#x2F;tmp</p>
+<p>将查找&#x2F;var&#x2F;目录小修改时间超过10天的文件复制到 &#x2F;tmp目录下</p>
+<h3 id="1-8-其余"><a href="#1-8-其余" class="headerlink" title="1.8 其余"></a>1.8 其余</h3><p>echo “xxxx” &gt; test （覆盖）</p>
+<p>echo “xxxx” &gt;&gt; test （追加）</p>
+<p>chattr 修改隐藏属性  lsattr 查看文件隐藏权限</p>
+<h3 id="1-9-常见问题"><a href="#1-9-常见问题" class="headerlink" title="1.9 常见问题"></a>1.9 常见问题</h3><p>权限问题导致文件无法下载</p>
+<p>chmod o+r 登陆用户</p>
+<p>隐藏权限导致文件无法修改lsattr查看</p>
+<p>chattr +i 文件名 加锁定 -i去锁定</p>
+<p>lsof | grep deleted 确认已经删除文件但未释放空间</p>
+<h2 id="2、磁盘管理"><a href="#2、磁盘管理" class="headerlink" title="2、磁盘管理"></a>2、磁盘管理</h2><h3 id="2-1-RAID管理"><a href="#2-1-RAID管理" class="headerlink" title="2.1 RAID管理"></a>2.1 RAID管理</h3><h3 id="2-2-分区管理"><a href="#2-2-分区管理" class="headerlink" title="2.2 分区管理"></a>2.2 分区管理</h3><h3 id="2-3-逻辑卷配置管理"><a href="#2-3-逻辑卷配置管理" class="headerlink" title="2.3 逻辑卷配置管理"></a>2.3 逻辑卷配置管理</h3>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/muouren7">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>
