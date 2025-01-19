@@ -135,7 +135,7 @@ prismjs:
 
 # Site
 title: muouren7のBlog
-subtitle: "向所有抗争不公命运的力量 致敬！"
+subtitle: "向所有抗争不公命运的力量 致敬！！！"
 author: muouren7
 language: zh
 timezone:
@@ -143,7 +143,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 # url: https://muouren7.github.io/
-url: http://muouren7.top
+url: https://muouren7.github.io/
 # url: http://localhost:4000/
 root: /
 permalink: :year/:month/:day/:title/
